@@ -19,7 +19,7 @@ function Blogs() {
         </div>}
         {blog && <div className='blogDisplayContainer'>
         <h1>{blog.title}</h1>
-        <p>{blog.text}</p>
+        <div dangerouslySetInnerHTML={{__html : blog.text}}></div>
         <h2>Blog autorstwa: {blog.author}</h2>
       </div>}
       

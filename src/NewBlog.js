@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 function NewBlog( {blogs} ) {
     const [title, setTitle] = useState('')
@@ -39,7 +41,9 @@ function NewBlog( {blogs} ) {
             <form className="newBlogForm">
                 <input type = 'text' placeholder= 'Tytuł' className="blogInput" value={title} onChange = { e=> setTitle(e.target.value) } required></input>
                 <input type = 'text' placeholder= 'Autor' className="blogInput" value={author} onChange = { e=> setAuthor(e.target.value) } required></input>
-                <textarea className="blogText" value={text} onChange = { e => setText(e.target.value) } required></textarea>
+                <div className="blogText">
+                  <ReactQuill theme="snow" className='text' value={text} onChange = {setText} />
+                </div>
                 <button className="newBlogSubmitButton" onClick = { e => handleSubmit(e) }>Dodaj bloga!</button>
             </form>
       </div>

@@ -409,9 +409,14 @@ a:visited{
 .blogInput{
   width: 20vw;
   height: 5vh;
-  border-radius: 5px;
+  border-radius: 1px;
+  border: 1px solid var(--blog-border-bottom);
   font-size: 24px;
-  border-color: var(--blog-border-bottom);
+  padding: 15px;
+}
+.blogInput:focus{
+  outline: none;
+  box-shadow: none;
 }
 .blogText{
   min-width: 30vw;
@@ -420,6 +425,12 @@ a:visited{
   max-height: 100vh;
   font-size: 26px;
   border-color: var(--blog-border-bottom);
+}
+.ql-container{
+  height: 40vh !important;
+  width: 50vw;
+  color: var(--text-color);
+  font-size: 26px !important;
 }
 .newBlogSubmitButton{
   background-color: var(--main-color);
@@ -451,6 +462,7 @@ a:visited{
   color: var(--main-color);
   font-size: 45px;
   margin-bottom: 0;
+  
   text-align: center;
 }
 .blogDisplayContainer h2{
@@ -458,14 +470,16 @@ a:visited{
   margin-bottom: 5vh;
   font-size: 14px;
   text-align: center;
+  padding-top: 15px;
+  width: 80vw;
+  border-top : 1px solid var(--blog-border-bottom);
 }
-.blogDisplayContainer p {
+.blogDisplayContainer div {
   margin: 0 auto 0 auto;
   width: 80vw;
   line-height: 130%;
   padding: 1rem;
   font-size: 26px;
-  border-bottom:var(--blog-border-bottom) 1px solid;
 }
 
 /*RESPONSIVE BLOG DETAILS*/
