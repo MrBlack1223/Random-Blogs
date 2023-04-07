@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-
+import DOMPurify from 'dompurify';
 function NewBlog( {blogs} ) {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
@@ -15,7 +15,7 @@ function NewBlog( {blogs} ) {
 
       const newBlog = {title : title,
                         author : author,
-                        text : text}
+                        text : DOMPurify.sanitize(text)}
 
         fetch('https://random-blogs-api.onrender.com/blogs',{
           method: 'POST',

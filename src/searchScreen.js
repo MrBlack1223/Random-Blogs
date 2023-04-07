@@ -9,7 +9,7 @@ function SearchScreen({setShowSearch}) {
     const {data , isPending, error} = useFetch(`https://random-blogs-api.onrender.com/blogs/search/byQuery?q=${query}`,false)
     const handleClose = ()=>{
         setShowSearch(false)
-        document.querySelector('body').style.overflow = "scroll"
+        document.querySelector('body').style.overflowY = "scroll"
     }
     const handleInputChange = (e)=>{
         setQuery(e.target.value)
