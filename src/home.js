@@ -13,7 +13,7 @@ function Home() {
   const { showTopMsg, toTop} = useToTop()
   const { data:blogs,isPending,  error} = useFetch(`https://random-blogs-api.onrender.com/blogs?skip=${page}`,true)
   const handleScroll = ()=>{
-    if(window.innerHeight + document.documentElement.scrollTop  >= document.documentElement.scrollHeight){
+    if(window.innerHeight + document.documentElement.scrollTop +1 >= document.documentElement.scrollHeight){
         setPage((prev)=>prev + 6)
       }
   }
