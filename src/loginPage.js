@@ -78,7 +78,7 @@ function LoginScreen() {
         name: values.name,
         password : values.password
         }
-        const res = await fetch(`http://localhost:8888/user/${isSignIn ? 'signin' : 'signup'}`,{
+        const res = await fetch(`https://random-blogs-api.onrender.com/user/${isSignIn ? 'signin' : 'signup'}`,{
             method: 'POST',
             withCredentials: true,
             credentials: 'include',
