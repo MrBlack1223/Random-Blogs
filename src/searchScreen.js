@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import CloseIcon from '@mui/icons-material/Close';
 import useFetch from './Hooks/useFetch.js';
-import PrintList from './printList.js';
+import PrintList from './components/printList.js';
 
 function SearchScreen({setShowSearch}) {
     const [query,setQuery] = useState('')

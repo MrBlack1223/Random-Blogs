@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PrintList from './printList'
+import PrintList from './components/printList.js'
 import useFetch from './Hooks/useFetch';
 import useToTop from './Hooks/useToTop';
 import { useEffect } from 'react';

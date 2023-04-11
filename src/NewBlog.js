@@ -10,15 +10,17 @@ function NewBlog( {blogs} ) {
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       e.preventDefault()
-
-      const newBlog = {title : title,
-                        author : author,
+      console.log()
+      const newBlog = { title : title,
+                        author : localStorage.getItem('username'),
                         text : DOMPurify.sanitize(text)}
 
-        fetch('https://random-blogs-api.onrender.com/blogs',{
+        const res = await fetch('https://random-blogs-api.onrender.com/blogs',{
           method: 'POST',
+          withCredentials: true,
+          credentials: 'include',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -29,10 +31,16 @@ function NewBlog( {blogs} ) {
           console.log(error)
         })
 
-        setTitle('')
-        setAuthor('')
-        setText('')
-        navigate('/');
+        if(res.status === 200){
+          setTitle('')
+          setAuthor('')
+          setText('')
+          navigate('/')
+        }
+        else if(res.status === 500){
+          navigate('/login')
+        }
+        
     }
 
     return (
@@ -40,7 +48,6 @@ function NewBlog( {blogs} ) {
             <h1>Dodaj Bloga!</h1>
             <form className="newBlogForm">
                 <input type = 'text' placeholder= 'Tytuł' className="blogInput" value={title} onChange = { e=> setTitle(e.target.value) } required></input>
-                <input type = 'text' placeholder= 'Autor' className="blogInput" value={author} onChange = { e=> setAuthor(e.target.value) } required></input>
                 <div className="blogText">
                   <ReactQuill theme="snow" className='text' value={text} onChange = {setText} />
                 </div>

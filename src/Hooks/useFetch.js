@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-const useFetch = (url,isArray) =>{
+const useFetch = (url,isArray,options) =>{
   
   const [data,setData] = useState([{}])
   const [isPending, setIsPending] = useState(true)
@@ -8,7 +8,7 @@ const useFetch = (url,isArray) =>{
   
   useEffect(()=>{
       let active = true;
-      fetch(url)
+      fetch(url,options)
       .then(res=>{
           if(!res.ok ){
               throw Error('Cant fetch data')

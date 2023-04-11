@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import LoadingScreen from './loadingScreen';
-import SearchScreen from './searchScreen';
+import SearchScreen from '../searchScreen.js';
+import { UserContext } from '../userContext.js';
+import CustomLink from './customLink.js';
 function Nav() {
     const [showSearching,setShowSearching] = useState(false)
+    const {user,setUser} = useContext(UserContext)
 
     const checkTheme = ()=>{
       let theme = localStorage.getItem('theme') || 'light'
@@ -36,8 +38,9 @@ function Nav() {
       <div className="navbar">
         <h1>Random Blogs</h1>
         <div className='links'>
-          <Link to='/newBlog'>New blog</Link>
+          <Link to={user ? '/newBlog' : '/login'}>New blog</Link>
           <Link to='/'>Home</Link>
+          <CustomLink url = '/login' second = 'Logout'/>
         </div>
         <SearchIcon className='searchIconNavbar' fontSize='large' onClick={handleSearchClick}/>
         <button className='themeButtonContainer' onClick={changeTheme}><div className='themeSwitch'></div></button>
