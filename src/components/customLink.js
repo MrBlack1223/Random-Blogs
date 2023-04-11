@@ -5,7 +5,7 @@ import { UserContext } from '../userContext'
 function CustomLink({url,second}) {
     const handleSecondLinkClick = async()=>{
         try{   
-            const res = await fetch('https://randomblogs.onrender.com/user/logout',{
+            const res = await fetch('https://random-blogs-api.onrender.com/user/logout',{
                 withCredentials: true,
                 credentials: 'include',
             })
