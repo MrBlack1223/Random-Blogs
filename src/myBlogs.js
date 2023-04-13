@@ -10,7 +10,7 @@ const MyBlogs = ()=>{
     withCredentials: true,
     credentials: 'include'
     }
-    const {data, isPending, error} = useFetch(`https://random-blogs-api.onrender.com?skip=${page}`, true, options)
+    const {data, isPending, error} = useFetch(`https://random-blogs-api.onrender.com/user/myblogs?skip=${page}`, true, options)
     const handleScroll = ()=>{
         if(window.innerHeight + document.documentElement.scrollTop + 1 === document.documentElement.scrollHeight){
             setPage((prev)=>prev + 6)
