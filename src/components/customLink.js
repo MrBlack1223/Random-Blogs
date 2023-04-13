@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-import './customLink.css'
 import { useContext, useEffect } from 'react'
 import { UserContext } from '../userContext'
 function CustomLink({url,second}) {

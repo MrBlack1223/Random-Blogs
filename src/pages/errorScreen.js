@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './errorScreen.css'
 
 function ErrorScreen() {
 

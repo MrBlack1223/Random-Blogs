@@ -1,0 +1,25 @@
+.errorScreenContainer{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    opacity: 0.96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .error{
+    width: 40vw;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .errorMessage{
+    color: var(--text-color);
+    font-size: 46px;
+  }

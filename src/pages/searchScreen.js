@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
 import CloseIcon from '@mui/icons-material/Close';
-import useFetch from './Hooks/useFetch.js';
-import PrintList from './components/printList.js';
+import useFetch from '../Hooks/useFetch.js';
+import PrintList from '../components/printList.js';
+import './searchScreen.css'
 
 function SearchScreen({setShowSearch}) {
     const [query,setQuery] = useState('')

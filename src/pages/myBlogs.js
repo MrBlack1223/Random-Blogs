@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import useFetch from "./Hooks/useFetch.js";
-import PrintList from "./components/printList.js";
+
+import useFetch from "../Hooks/useFetch.js";
+import PrintList from "../components/printList.js";
 import LoadingScreen from "./loadingScreen.js";
 import ErrorScreen from "./errorScreen.js";
 

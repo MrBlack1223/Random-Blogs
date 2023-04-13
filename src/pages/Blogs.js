@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import React from 'react';
-import useFetch from './Hooks/useFetch';
-import useToTop from './Hooks/useToTop';
+import useFetch from '../Hooks/useFetch.js';
+import useToTop from '../Hooks/useToTop.js';
 import LoadingScreen from './loadingScreen';
-
+import './Blog.css'
 function Blogs() {
     const { id } = useParams()
     const { showTopMsg, toTop} = useToTop()

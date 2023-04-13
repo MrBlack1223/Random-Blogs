@@ -1,0 +1,76 @@
+.formContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    color:var(--main-color);
+  }
+  .newBlogForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 3vh;
+  }
+  .newBlogForm input{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  .blogInput{
+    width: 20vw;
+    height: 5vh;
+    border-radius: 1px;
+    border: none;
+    border-bottom: 1px solid var(--text-color);
+    font-size: 24px;
+    padding: 15px;
+  }
+  .blogInput:focus{
+    outline: none;
+    box-shadow: none;
+  }
+  .blogText{
+    min-width: 30vw;
+    min-height: 30vh;
+    max-width: 90vw;
+    max-height: 100vh;
+    font-size: 26px;
+    border-color: var(--blog-border-bottom);
+  }
+  .ql-container{
+    z-index: 0;
+    height: 40vh !important;
+    width: 50vw;
+    color: var(--text-color);
+    font-size: 26px !important;
+  }
+  .newBlogSubmitButton{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 10px;
+    border-color: var(--bg-color);
+    font-size: 24px;
+    width: 8vw;
+    height: 8vh;
+    transition: 0.2s linear all;
+    min-width: fit-content;
+  }
+  .newBlogSubmitButton:hover{
+    background-color: var(--main-color-hover);
+    cursor: pointer;
+    color: var(--bg-color);
+  }
+  /*RESPONSIVE NEW BLOG*/
+  
+  @media only screen and (max-width: 800px){
+    .ql-container{
+      width: 372px;
+    }
+  }
+  @media only screen and (max-width: 414px){
+    .ql-container{
+      width: 90vw;
+    }
+  }

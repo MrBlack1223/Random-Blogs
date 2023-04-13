@@ -1,0 +1,48 @@
+.loginScreenContainer{
+    background-color: var(--bg-color);
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .registerFormHeader{
+    color: var(--main-color-hover);
+    margin-top: 0;
+  }
+  .loginScreenForm{
+    min-width: fit-content;
+    min-height: fit-content;
+    width:20vw;
+    height: 70vh;
+    background-color: var(--search-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .registerButtonSubmit{
+    background-color: var(--search-bg-color);
+    color: var(--main-color-hover);
+    margin-top: 4vh;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--main-color-hover);
+    cursor: pointer;
+    font-size: 20px;
+    min-width: fit-content;
+    transition: all 0.4s ease-in-out;
+  }
+  .registerButtonSubmit:hover{
+    background-color: var(--main-color-hover);
+    color: var(--search-bg-color);
+  }
+  .loginInfoMsg{
+    color:var(--main-color-hover);
+    margin-top: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }

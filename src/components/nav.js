@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import SearchScreen from '../searchScreen.js';
+import SearchScreen from '../pages/searchScreen.js';
 import { UserContext } from '../userContext.js';
 import CustomLink from './customLink.js';
+
+import './nav.css'
 function Nav() {
     const [showSearching,setShowSearching] = useState(false)
     const {user,setUser} = useContext(UserContext)

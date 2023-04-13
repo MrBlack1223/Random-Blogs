@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import PrintList from './components/printList.js'
-import useFetch from './Hooks/useFetch';
-import useToTop from './Hooks/useToTop';
+import PrintList from '../components/printList.js'
+import useFetch from '../Hooks/useFetch.js';
+import useToTop from '../Hooks/useToTop.js';
 import { useEffect } from 'react';
-import ErrorScreen from './errorScreen';
-import LoadingScreen from './loadingScreen';
-
+import ErrorScreen from './errorScreen.js';
+import LoadingScreen from './loadingScreen.js';
+import './home.css'
 
 function Home() {
   

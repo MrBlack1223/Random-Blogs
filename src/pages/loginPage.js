@@ -1,9 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import React, { useContext, useState } from 'react';
-import CustomInput from './components/input';
-import {useNavigate} from 'react-router-dom';
-import { UserContext } from './userContext.js';
 
+import CustomInput from '../components/input.js';
+import { UserContext } from '../userContext.js';
+
+import './loginPage.css'
 function LoginScreen() {
 
     const {user,setUser} = useContext(UserContext);

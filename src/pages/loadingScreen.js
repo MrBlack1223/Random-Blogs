@@ -1,6 +1,6 @@
 import React from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
-
+import './loadingScreen.css'
 function LoadingScreen({loading}) {
 
     return (

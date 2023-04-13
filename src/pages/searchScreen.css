@@ -1,0 +1,126 @@
+.searchingScreenContainer{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
+  .opacityMaker{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .search{
+    width: 30vw;
+    height: 90vh;
+    background-color: var(--search-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .searchNav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0vh;
+    
+  }
+  .searchBar{
+    width: 80%;
+    padding: 10px;
+    background-color: var(--search-bg-color);
+    border: none;
+    border-bottom: 2px solid var(--main-color-hover);
+    color: var(--main-color);
+    font-size: 24px;
+  }
+  .searchBar:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .closeSearchSite{
+    position:absolute;
+    top: 1vh;
+    left: 90%;
+  }
+  .closeSearchSite:hover{
+    color: var(--main-color-hover);
+    cursor: pointer;
+  }
+  .searchResult{
+    width: 100%;
+    height: 70vh;
+    padding: 0;
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .searchBlogWrapper{
+    width: 100%;
+    height: 70vh;
+    margin: 0;
+    margin-top: 2vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .searchBlogWrapper a{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .searchBlog{
+    width: 80%;
+    height: 15vh;
+    transition: 0.4s linear;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBlog p{
+    font-size: 16px;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .searchBlog h2{
+    font-size: 24px;
+    margin: 0;
+    color: var(--main-color);
+    text-align: center;
+  }
+  .searchLoaderContainer{
+    width: 5vw;
+    height: 5vw;
+    margin-left: 100%;
+    margin-right: 100%;
+  }
