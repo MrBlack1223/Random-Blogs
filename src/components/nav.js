@@ -40,9 +40,9 @@ function Nav() {
       <div className="navbar">
         <h1>Random Blogs</h1>
         <div className='links'>
-          <Link to={user ? '/newBlog' : '/login'}>New blog</Link>
-          <Link to='/'>Home</Link>
-          <CustomLink url = '/login' second = 'Logout'/>
+          <Link className='link' to={user ? '/newBlog' : '/login'}>New blog</Link>
+          <Link className='link' to='/'>Home</Link>
+          <CustomLink className='link' url = '/login' second = 'Logout'/>
         </div>
         <SearchIcon className='searchIconNavbar' fontSize='large' onClick={handleSearchClick}/>
         <button className='themeButtonContainer' onClick={changeTheme}><div className='themeSwitch'></div></button>

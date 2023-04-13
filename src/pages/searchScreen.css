@@ -94,6 +94,7 @@
     justify-content: center;
   }
   .searchBlog{
+    margin: 0;
     width: 80%;
     height: 15vh;
     transition: 0.4s linear;

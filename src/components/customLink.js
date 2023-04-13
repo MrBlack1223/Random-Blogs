@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 import { useContext, useEffect } from 'react'
 import { UserContext } from '../userContext'
+import './nav.css'
 function CustomLink({url,second}) {
     const handleSecondLinkClick = async()=>{
         try{   
@@ -23,10 +24,10 @@ function CustomLink({url,second}) {
     },[])
     return (
         <div>
-            <Link to = {user ? '/myBlogs' : url}>
+            <Link className = 'link' to = {user ? '/myBlogs' : url}>
                 {user ? user : 'Login'}
             </Link>
-            <Link className='secondSlideLink' onClick = {handleSecondLinkClick}>
+            <Link  className='secondSlideLink link' onClick = {handleSecondLinkClick}>
                 {user ? second : ''}
             </Link>
         </div>
