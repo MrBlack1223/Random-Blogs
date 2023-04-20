@@ -23,9 +23,10 @@ function App() {
           <Routes>
               <Route path='/' element= {<Home/>}/>
               <Route path='/newBlog' element = {<NewBlog/>} />
-              <Route path='/blogs/:id' element = {<Blogs/>} />
+              <Route path='/blogs/:id' element = {<Blogs editMode = {false}/>} />
               <Route path='/login' element = {<LoginScreen/>} />
               <Route path='/myBlogs' element = {<MyBlogs/>} />
+              <Route path='/editBlog/:id' element = {<NewBlog editMode = {true}/>} />
           </Routes>
         </div>
       </UserContext.Provider>

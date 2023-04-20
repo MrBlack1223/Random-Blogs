@@ -37,3 +37,19 @@
     background-color: var(--blog-color-hover);
     cursor: pointer;
   }
+  .blogAndEditWrapper{
+    min-width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .editIcon{
+    position: absolute;
+    left: 80%;
+    transition: color 0.2s ease-in-out;
+    
+  }
+  .editIcon:hover{
+    color: var(--main-color)
+  }
