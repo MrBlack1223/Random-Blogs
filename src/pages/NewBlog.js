@@ -21,6 +21,7 @@ function NewBlog( {editMode} ) {
                         author : localStorage.getItem('username'),
                         text : DOMPurify.sanitize(text)}
         const url = editMode ? `https://random-blogs-api.onrender.com/blogs/update/${id}` : 'https://random-blogs-api.onrender.com/blogs'
+        
         const res = await fetch(url,{
           method: 'POST',
           withCredentials: true,

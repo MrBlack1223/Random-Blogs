@@ -92,12 +92,13 @@
     justify-content: center;
     position: relative;
   }
-  .searchEditIcon{
+  .searchEditIconsContainer{
     position: absolute;
-    left: 80%;
-  }
-  .searchEditIcon:hover{
-    color: var(--main-color)
+    left: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
   .searchBlogLink{
     min-width: 100%;

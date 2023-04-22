@@ -44,12 +44,19 @@
     justify-content: center;
     position: relative;
   }
-  .editIcon{
+  .editIconsContainer{
     position: absolute;
-    left: 80%;
+    left: 70%;
     transition: color 0.2s ease-in-out;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
-  .editIcon:hover{
-    color: var(--main-color)
+  .deleteIcon, .editIcon{
+    cursor: pointer;
+  }
+  .deleteIcon:hover, .editIcon:hover{
+    color: var(--main-color);
+    
   }
