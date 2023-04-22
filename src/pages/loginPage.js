@@ -97,9 +97,17 @@ function LoginScreen() {
             setIsSignIn(true)
         }
         if(res.status === 200 && isSignIn)
-        {
-            localStorage.setItem('username', values.name)
-            setUser(values.name)
+        {   
+            const data = await res.json()
+            localStorage.setItem('username', data.name)
+            localStorage.setItem('userid', data._id)
+            localStorage.setItem('userblogs', data.blogs)
+            
+            setUser({
+              name: data.name,
+              id: data._id,
+              blogs: data.blogs
+            })
             navigate('/')
         }
         if(res.status === 500)console.log('użyykownik juz istnieje')

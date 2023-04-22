@@ -60,3 +60,19 @@
     color: var(--main-color);
     
   }
+  .likesContainer, .commentsContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .likesContainer{
+    top: 55%;
+    left: 15%;
+  }
+  .commentsContainer{
+    top: 55%;
+    left: 22%;
+  }

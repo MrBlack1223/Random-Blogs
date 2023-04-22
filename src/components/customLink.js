@@ -25,7 +25,7 @@ function CustomLink({url,second}) {
     return (
         <div>
             <Link className = 'link' to = {user ? '/myBlogs' : url}>
-                {user ? user : 'Login'}
+                {user ? user.name : 'Login'}
             </Link>
             <Link  className='secondSlideLink link' onClick = {handleSecondLinkClick}>
                 {user ? second : ''}

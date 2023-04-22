@@ -23,14 +23,36 @@
     width: 80vw;
     border-top : 1px solid var(--blog-border-bottom);
   }
-  .blogDisplayContainer div {
+  .mainArticle {
     margin: 0 auto 0 auto;
     width: 80vw;
     line-height: 130%;
     padding: 1rem;
     font-size: 26px;
   }
-  
+  .likeAndCommentButtonWrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin:0;
+    padding:0;
+    gap: 10px;
+    width: 200px;
+  }
+  .likeAndCommentButtonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .like, .comment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: large;
+  }
   /*RESPONSIVE BLOG DETAILS*/
   
   @media only screen and (max-width: 290px){

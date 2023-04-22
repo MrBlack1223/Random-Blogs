@@ -1,14 +1,66 @@
 import { useParams } from 'react-router-dom'
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import useFetch from '../Hooks/useFetch.js';
 import useToTop from '../Hooks/useToTop.js';
 import LoadingScreen from './loadingScreen';
+
+
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+
 import './Blog.css'
+import { BlogContext, UserContext } from '../userContext.js';
 function Blogs() {
     const { id } = useParams()
     const { showTopMsg, toTop} = useToTop()
     const { data:blog, isPending} = useFetch(`https://random-blogs-api.onrender.com/blogs/${id}`,false)
-    
+    const {user,setUser} = useContext(UserContext)
+    const [blogLikes, setBlogLikes] = useState([])
+
+    const [isBlogLiked,setIsBlogLiked] = useState(false)
+
+    const handleLike = async (isLike)=>{
+      try{
+        const options = {
+          method: 'POST',
+          withCredentials: true,
+          credentials: 'include',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }}
+          const url = isLike ? `https://random-blogs-api.onrender.com/blogs/like/${id}` : `https://random-blogs-api.onrender.com/blogs/dislike/${id}`
+          await fetch(url, options)
+          const newArray = isBlogLiked ? blogLikes.filter(item=>item !== user.id) : [...blogLikes,user.id]
+          setBlogLikes(newArray)
+          setIsBlogLiked(prev=>!prev)
+      }catch(e){
+        console.log(e)
+      }
+    }
+    useEffect(()=>{
+      const name = localStorage.getItem('username')
+      const id = localStorage.getItem('userid')
+      const blogs = localStorage.getItem('userblogs')
+
+      setUser({
+        name:name,
+        id:id,
+        blogs:blogs
+      })
+
+    },[])
+    useEffect(()=>{
+      if(blog.likes !== undefined){
+        setBlogLikes(blog.likes)
+        const blogLiked = blog.likes.includes(user.id,0)
+        setIsBlogLiked(blogLiked)
+      }
+
+    },[blog])
+
     return (
       <>
         {isPending && <LoadingScreen loading = {isPending}/>}
@@ -19,8 +71,20 @@ function Blogs() {
         </div>}
         {blog && <div className='blogDisplayContainer'>
         <h1>{blog.title}</h1>
-        <div dangerouslySetInnerHTML={{__html : blog.text}}></div>
-        <h2>Blog autorstwa: {blog.author}</h2>
+        <div className = 'mainArticle' dangerouslySetInnerHTML={{__html : blog.text}}></div>
+        <h2 className='likeAndCommentButtonWrapper'>
+            Blog autorstwa: {blog.author}
+            <div className='likeAndCommentButtonContainer'>
+              <h3 className='like'>
+                {isBlogLiked ? <FavoriteOutlinedIcon sx={{ color: 'var(--main-color)' }} onClick = {()=>{handleLike(false)}}/>  : <FavoriteBorderIcon onClick = {()=>{handleLike(true)}}/>}
+                {blogLikes !== undefined ?  blogLikes.length : '0'}
+              </h3>
+              <h3 className='comment'>
+                <ChatBubbleOutlineOutlinedIcon/>
+                {blog.comments !== undefined ?  blog.comments.length : '0'}
+              </h3>
+            </div>
+        </h2>
       </div>}
       
       </>
