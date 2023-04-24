@@ -1,0 +1,58 @@
+.messageContainer{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.messageWrapper{
+    width: 35vw;
+    height: 35vh;
+    background-color: var(--blog-border-bottom);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 45px;
+}
+.yesNoButtonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px
+}
+.message{
+    font-size: 36px;
+    color: var(--main-color)
+}
+.yesButton, .noButton{
+    cursor: pointer;
+    background-color: inherit;
+    color: var(--main-color);
+    border:none;
+    font-size: large;
+}
+@keyframes inAnimation {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  @keyframes outAnimation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

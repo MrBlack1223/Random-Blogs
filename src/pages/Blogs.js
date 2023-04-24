@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import React, { useContext, useEffect, useState } from 'react';
 import useFetch from '../Hooks/useFetch.js';
 import useToTop from '../Hooks/useToTop.js';
@@ -18,6 +18,7 @@ function Blogs() {
     const { data:blog, isPending} = useFetch(`https://random-blogs-api.onrender.com/blogs/${id}`,false)
     const {user,setUser} = useContext(UserContext)
     const [blogLikes, setBlogLikes] = useState([])
+    const navigate = useNavigate();
 
     const [isBlogLiked,setIsBlogLiked] = useState(false)
 
@@ -37,7 +38,7 @@ function Blogs() {
           setBlogLikes(newArray)
           setIsBlogLiked(prev=>!prev)
       }catch(e){
-        console.log(e)
+        navigate('/login')
       }
     }
     useEffect(()=>{

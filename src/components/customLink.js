@@ -11,6 +11,8 @@ function CustomLink({url,second}) {
             })
             if(res.status === 200) {
                 localStorage.removeItem('username')
+                localStorage.removeItem('userid')
+                localStorage.removeItem('userblogs')
                 setUser(null)
             }
         }catch(e){
@@ -20,7 +22,12 @@ function CustomLink({url,second}) {
     const {user,setUser} = useContext(UserContext)
 
     useEffect(()=>{
-        setUser(localStorage.getItem('username'))
+        const getUser = {
+            name: localStorage.getItem('username'),
+            id: localStorage.getItem('userid'),
+            blogs: localStorage.getItem('userblogs')
+        }
+        setUser(getUser)
     },[])
     return (
         <div>
