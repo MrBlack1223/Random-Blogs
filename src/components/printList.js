@@ -18,7 +18,7 @@ function PrintList({data,isSearchingPage, handleClose}) {
       document.body.style.overflow = 'hidden'
     }
     const handleDeleteBlog = async(item)=>{
-      document.body.style.overflow = 'scroll'
+      document.body.style.overflowY = 'scroll'
       try{
         const options = {
           method: 'DELETE',
@@ -71,7 +71,7 @@ function PrintList({data,isSearchingPage, handleClose}) {
     {showMsg && <Message
                   showMsg={showMsg} 
                   handleYes={()=>{handleDeleteBlog(deleteBlogID)}}
-                  handleClose = {()=>{setShowMsg(false); document.body.style.overflow = 'scroll'}}
+                  handleClose = {()=>{setShowMsg(false); document.body.style.overflowY = 'scroll'}}
                   msg = 'Are you sure ?'
                 />
     }
