@@ -1,0 +1,102 @@
+.commentsWrapper{
+    margin: 0 auto 0 auto;
+    width: 80vw;
+    line-height: 130%;
+    padding: 1rem;
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 100px
+}
+.commentSectionHeader{
+    color: var(--main-color);
+    margin: 0;
+    padding: 0;
+}
+.addCommentWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+}
+.addCommentInput{
+    width: 90%;
+    min-height: fit-content;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid var(--main-color-hover);
+    color: var(--text);
+    font-size: 24px;
+
+}
+.addCommentInput:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--main-color);
+  }
+.addCommentButton{
+    background-color: inherit;
+    color:var(--main-color-hover);
+    border:none;
+    cursor: pointer;
+    
+}
+.emojiPickerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+aside.EmojiPickerReact.epr-main{
+    position: absolute;
+}
+.EmojiPickerReact.epr-main{
+    position: absolute;
+    top: 100%;
+    margin-top: 50px;
+}
+@media only screen and (max-width:830px){
+    aside.EmojiPickerReact.epr-main{
+        width: 50vw !important;
+        left: -50vw !important;
+    }
+}
+@media only screen and (max-width:500px){
+    aside.EmojiPickerReact.epr-main{
+        width: 70vw !important;
+        left: -50vw !important;
+    }
+}
+.displayCommentsWrapper{
+    width: 80vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 50px
+}
+.comment{
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap:10px;
+    border-bottom: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 10px;
+
+}
+.commentAuthor{
+    margin: 0;
+    padding: 0;
+}
+.commentText{
+    width: 100%;
+    overflow-wrap: break-word
+}

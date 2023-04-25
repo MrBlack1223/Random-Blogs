@@ -12,12 +12,15 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 
 import './Blog.css'
 import { BlogContext, UserContext } from '../userContext.js';
+import Comments from './Comments.js';
+
 function Blogs() {
     const { id } = useParams()
     const { showTopMsg, toTop} = useToTop()
     const { data:blog, isPending} = useFetch(`https://random-blogs-api.onrender.com/blogs/${id}`,false)
     const {user,setUser} = useContext(UserContext)
     const [blogLikes, setBlogLikes] = useState([])
+    const [blogCommentsLength, setBlogCommentsLength] = useState(0)
     const navigate = useNavigate();
 
     const [isBlogLiked,setIsBlogLiked] = useState(false)
@@ -59,7 +62,7 @@ function Blogs() {
         const blogLiked = blog.likes.includes(user.id,0)
         setIsBlogLiked(blogLiked)
       }
-
+      if(blog.comments !== undefined)setBlogCommentsLength(blog.comments.length)
     },[blog])
 
     return (
@@ -80,14 +83,14 @@ function Blogs() {
                 {isBlogLiked ? <FavoriteOutlinedIcon sx={{ color: 'var(--main-color)' }} onClick = {()=>{handleLike(false)}}/>  : <FavoriteBorderIcon onClick = {()=>{handleLike(true)}}/>}
                 {blogLikes !== undefined ?  blogLikes.length : '0'}
               </h3>
-              <h3 className='comment'>
+              <h3 className='commentIcon'>
                 <ChatBubbleOutlineOutlinedIcon/>
-                {blog.comments !== undefined ?  blog.comments.length : '0'}
+                {blog.comments !== undefined ? blogCommentsLength : '0'}
               </h3>
             </div>
         </h2>
       </div>}
-      
+      <Comments comments = {blog.comments} blogID={id} setLength = {setBlogCommentsLength}/>
       </>
     );
   }

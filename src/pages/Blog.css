@@ -45,7 +45,7 @@
     justify-content: center;
     gap: 30px;
   }
-  .like, .comment{
+  .like, .commentIcon{
     display: flex;
     align-items: center;
     justify-content: center;
