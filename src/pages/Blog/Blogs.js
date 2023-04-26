@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import React, { useContext, useEffect, useState } from 'react';
-import useFetch from '../Hooks/useFetch.js';
-import useToTop from '../Hooks/useToTop.js';
-import LoadingScreen from './loadingScreen';
+import useFetch from '../../Hooks/useFetch.js';
+import useToTop from '../../Hooks/useToTop.js';
+import LoadingScreen from '../loadingScreen/loadingScreen.js';
 
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -11,8 +11,8 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 
 import './Blog.css'
-import { BlogContext, UserContext } from '../userContext.js';
-import Comments from './Comments.js';
+import { BlogContext, UserContext } from '../../userContext.js';
+import Comments from '../../components/Comments/Comments.js';
 
 function Blogs() {
     const { id } = useParams()
@@ -36,7 +36,8 @@ function Blogs() {
             'Content-Type': 'application/json'
           }}
           const url = isLike ? `https://random-blogs-api.onrender.com/blogs/like/${id}` : `https://random-blogs-api.onrender.com/blogs/dislike/${id}`
-          await fetch(url, options)
+          const res = await fetch(url, options)
+          if(res.status === 500) navigate('/login')
           const newArray = isBlogLiked ? blogLikes.filter(item=>item !== user.id) : [...blogLikes,user.id]
           setBlogLikes(newArray)
           setIsBlogLiked(prev=>!prev)

@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import { useContext, useEffect } from 'react'
-import { UserContext } from '../userContext'
-import './nav.css'
+import { UserContext } from '../../userContext'
+import '../navbar/nav.css'
 function CustomLink({url,second}) {
     const handleSecondLinkClick = async()=>{
         try{   

@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DOMPurify from 'dompurify';
 import './NewBlog.css'
-import useFetch from '../Hooks/useFetch';
+import useFetch from '../../Hooks/useFetch';
 function NewBlog( {editMode} ) {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')

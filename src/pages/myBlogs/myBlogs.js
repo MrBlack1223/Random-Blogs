@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import useFetch from "../Hooks/useFetch.js";
-import PrintList from "../components/printList.js";
-import LoadingScreen from "./loadingScreen.js";
-import ErrorScreen from "./errorScreen.js";
+import useFetch from "../../Hooks/useFetch.js";
+import PrintList from "../../components/printList/printList.js";
+import LoadingScreen from "../loadingScreen/loadingScreen.js";
+import ErrorScreen from "../errorScreen/errorScreen.js";
 
 const MyBlogs = ()=>{
     const [page,setPage] = useState(0)
@@ -13,7 +13,7 @@ const MyBlogs = ()=>{
     }
     const {data, isPending, error} = useFetch(`https://random-blogs-api.onrender.com/user/myblogs?skip=${page}`, true, options)
     const handleScroll = ()=>{
-        if(window.innerHeight + document.documentElement.scrollTop + 1 === document.documentElement.scrollHeight){
+        if(window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight){
             setPage((prev)=>prev + 6)
           }
       }

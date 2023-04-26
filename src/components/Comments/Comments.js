@@ -4,12 +4,16 @@ import EmojiPicker from 'emoji-picker-react';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import './Comments.css'
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../userContext';
+import { UserContext } from '../../userContext';
+import { useNavigate } from 'react-router-dom';
+import ClipLoader from "react-spinners/ClipLoader";
 function Comments({comments,blogID,setLength}){
     const [showEmojiPicker,setShowEmojiPicker] = useState(false)
     const [commentText,setCommentText] = useState('')
     const [blogComments,setBlogComments] = useState([{}])
     const {user,setUser} = useContext(UserContext)
+    const [isPending,setIsPending] = useState(false)
+    const navigate = useNavigate()
     const handleEmojiClick = (emoji)=>{
         const newText = commentText.concat(emoji.emoji)
         setCommentText(prev => newText)
@@ -21,8 +25,8 @@ function Comments({comments,blogID,setLength}){
             {
                 text: commentText
             }
-            console.log('click1')
-            await fetch(`https://random-blogs-api.onrender.com/blogs/comments/add/${blogID}`,{
+            setIsPending(true)
+            const res = await fetch(`https://random-blogs-api.onrender.com/blogs/comments/add/${blogID}`,{
                 method: 'POST',
                 withCredentials: true,
                 credentials: 'include',
@@ -32,7 +36,8 @@ function Comments({comments,blogID,setLength}){
                 },
                 body: JSON.stringify(comment)
             })
-            console.log('click2')
+            setIsPending(false)
+            if(res.status === 500)navigate('/login')
             setBlogComments(prev=>[{
                 _id: 0,
                 author: user.name,
@@ -43,7 +48,7 @@ function Comments({comments,blogID,setLength}){
             setCommentText('')
         }catch(e){
             console.log(e)
-            console.log('click2')
+            setIsPending(false)
         }
         
     }
@@ -70,7 +75,7 @@ function Comments({comments,blogID,setLength}){
                                          />}
                     </div>
                 </div>
-                <button className="addCommentButton" type='submit'><AddIcon sx = {{fontSize : "45px"}}/></button>
+                <button className="addCommentButton" type='submit'>{isPending ? <ClipLoader  color = '#f1356d' size = '30px'/> : <AddIcon sx = {{fontSize : "45px"}}/>}</button>
             </form>
             <div className='displayCommentsWrapper'>
                 {blogComments && blogComments.map((com)=>{

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
-import SearchScreen from '../pages/searchScreen.js';
-import { UserContext } from '../userContext.js';
-import CustomLink from './customLink.js';
+import SearchScreen from '../../pages/searchScreen/searchScreen.js';
+import { UserContext } from '../../userContext.js';
+import CustomLink from '../customLink/customLink.js';
 
 import './nav.css'
 function Nav() {

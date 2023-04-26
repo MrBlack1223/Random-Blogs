@@ -2,13 +2,13 @@ import React, { createContext, useState } from 'react';
 import { Route, Routes} from 'react-router-dom'
 
 import './App.css';
-import Home from './pages/home.js'
-import Nav from'./components/nav.js'
-import NewBlog from './pages/NewBlog.js'
-import Blogs from './pages/Blogs.js'
-import LoginScreen from './pages/loginPage.js';
+import Home from './pages/home/home.js'
+import Nav from'./components/navbar/nav.js'
+import NewBlog from './pages/newBlog/NewBlog.js'
+import Blogs from './pages/Blog/Blogs.js'
+import LoginScreen from './pages/loginPage/loginPage.js';
 import { UserContext } from './userContext.js';
-import MyBlogs from './pages/myBlogs';
+import MyBlogs from './pages/myBlogs/myBlogs';
 
 
 function App() {

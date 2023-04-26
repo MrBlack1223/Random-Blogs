@@ -46,7 +46,7 @@
   }
   .editIconsContainer{
     position: absolute;
-    left: 70%;
+    left: 20%;
     transition: color 0.2s ease-in-out;
     display: flex;
     align-items: center;
@@ -70,9 +70,9 @@
   }
   .likesContainer{
     top: 55%;
-    left: 15%;
+    left: 75%;
   }
   .commentsContainer{
     top: 55%;
-    left: 22%;
+    left: 82%;
   }

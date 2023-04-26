@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useContext, useState } from 'react';
 
-import CustomInput from '../components/input.js';
-import { UserContext } from '../userContext.js';
+import CustomInput from '../../components/input/input.js';
+import { UserContext } from '../../userContext.js';
 
 import './loginPage.css'
 function LoginScreen() {

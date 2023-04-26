@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import Message from './message';
+import Message from '../message/message';
 import { useEffect, useState } from 'react';
 
 function PrintList({data,isSearchingPage, handleClose}) {
