@@ -45,9 +45,9 @@ function Blogs() {
       }
     }
     useEffect(()=>{
-      const name = localStorage.getItem('username')
-      const id = localStorage.getItem('userid')
-      const blogs = localStorage.getItem('userblogs')
+      const name = localStorage.getItem('username') ? localStorage.getItem('username') : ''
+      const id = localStorage.getItem('userid') ? localStorage.getItem('userid') : ''
+      const blogs = localStorage.getItem('userblogs') ? localStorage.getItem('userblogs') : ''
 
       setUser({
         name:name,

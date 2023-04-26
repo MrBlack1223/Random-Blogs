@@ -22,20 +22,23 @@ function CustomLink({url,second}) {
     const {user,setUser} = useContext(UserContext)
 
     useEffect(()=>{
+        const name = localStorage.getItem('username') ? localStorage.getItem('username') : ''
+        const id = localStorage.getItem('userid') ? localStorage.getItem('userid') : ''
+        const blogs = localStorage.getItem('userblogs') ? localStorage.getItem('userblogs') : ''
         const getUser = {
-            name: localStorage.getItem('username'),
-            id: localStorage.getItem('userid'),
-            blogs: localStorage.getItem('userblogs')
+            name: name,
+            id: id,
+            blogs: blogs
         }
         setUser(getUser)
     },[])
     return (
         <div>
-            <Link className = 'link' to = {user ? '/myBlogs' : url}>
-                {user ? user.name : 'Login'}
+            <Link className = 'link' to = {(user && user.name !== '') ? '/myBlogs' : url}>
+                {(user && user.name !== '') ? user.name : 'Login'}
             </Link>
             <Link  className='secondSlideLink link' onClick = {handleSecondLinkClick}>
-                {user ? second : ''}
+                {(user && user.name !== '') ? second : ''}
             </Link>
         </div>
     );

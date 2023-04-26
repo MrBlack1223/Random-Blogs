@@ -40,7 +40,7 @@ function Nav() {
       <div className="navbar">
         <h1>Random Blogs</h1>
         <div className='links'>
-          <Link className='link' to={user ? '/newBlog' : '/login'}>New blog</Link>
+          <Link className='link' to={ (user && user.name !== '') ? '/newBlog' : '/login'}>New blog</Link>
           <Link className='link' to='/'>Home</Link>
           <CustomLink className='link' url = '/login' second = 'Logout'/>
         </div>
