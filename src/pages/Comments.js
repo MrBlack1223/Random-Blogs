@@ -61,13 +61,14 @@ function Comments({comments,blogID,setLength}){
                 <textarea className="addCommentInput" placeholder="Add comment" value = {commentText} onChange={(e)=>{setCommentText(e.target.value)}}></textarea>
                 <div className='emojiPickerContainer'>
                     <InsertEmoticonIcon onClick = {()=>{setShowEmojiPicker(prev => !prev)}}/>
-                    {showEmojiPicker && <EmojiPicker 
+                    <div className='emojiPickerWrapper'>   {showEmojiPicker && <EmojiPicker 
                                             lazyLoadEmojis = {true}
-                                            width = '30vw'
+                                            width = '100%'
                                             height = '500px'
                                             theme= {localStorage.getItem('theme') === 'dark' ? 'dark':'light'}
                                             onEmojiClick = {(emoji)=>{handleEmojiClick(emoji)}}
                                          />}
+                    </div>
                 </div>
                 <button className="addCommentButton" type='submit'><AddIcon sx = {{fontSize : "45px"}}/></button>
             </form>

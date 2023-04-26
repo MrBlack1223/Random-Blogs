@@ -51,24 +51,22 @@
     flex-direction: column;
     position: relative;
 }
-aside.EmojiPickerReact.epr-main{
-    position: absolute;
-}
-.EmojiPickerReact.epr-main{
+.emojiPickerWrapper{
     position: absolute;
     top: 100%;
     margin-top: 50px;
+
 }
 @media only screen and (max-width:830px){
-    aside.EmojiPickerReact.epr-main{
-        width: 50vw !important;
-        left: -50vw !important;
+    .emojiPickerWrapper{
+        width: 50vw ;
+        left: -50vw ;
     }
 }
 @media only screen and (max-width:500px){
-    aside.EmojiPickerReact.epr-main{
-        width: 70vw !important;
-        left: -50vw !important;
+    .emojiPickerWrapper{
+        width: 70vw ;
+        left: -50vw ;
     }
 }
 .displayCommentsWrapper{
