@@ -9,7 +9,7 @@ function CustomLink({url,second}) {
                 withCredentials: true,
                 credentials: 'include',
             })
-            if(res.status === 200) {
+            if(res.status === 204) {
                 localStorage.removeItem('username')
                 localStorage.removeItem('userid')
                 localStorage.removeItem('userblogs')
